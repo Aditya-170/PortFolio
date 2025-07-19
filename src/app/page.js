@@ -76,7 +76,7 @@ export default function Home() {
       {/* Removed animated background particles */}
       <section id="home" className="relative z-10 w-full min-h-screen flex flex-col justify-center items-center py-24">
         <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-center bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">
-          Hi, I'm Alex Carter
+          Hi, I'm Aditya Tiwari(HOD)
         </h1>
         <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-200 text-center">
           Creative Full Stack Developer
@@ -107,7 +107,7 @@ export default function Home() {
               alt="Profile"
               className="w-40 h-40 rounded-full object-cover border-4 border-blue-400 shadow-lg mb-4 md:mb-6 md:mr-0"
             />
-            <h2 className="text-3xl font-bold mb-2 text-center md:text-left">Alex Carter</h2>
+            <h2 className="text-3xl font-bold mb-2 text-center md:text-left">Aditya Tiwari</h2>
             <p className="text-gray-700 dark:text-gray-200 text-center md:text-left mb-4">
               Passionate full stack developer with a knack for building beautiful, performant web apps. Always learning, always creating.
             </p>
