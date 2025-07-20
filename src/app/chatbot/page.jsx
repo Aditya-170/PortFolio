@@ -8,7 +8,7 @@ export default function GeminiChatBot() {
     const [messages, setMessages] = useState([
         {
             type: "bot",
-            text: "👋 Hey! I'm Ujjwal's portfolio AI. Ask me about any of his projects, tech stack, or achievements.",
+            text: "👋 Hey! I'm Aditya's portfolio AI. Ask me about any of his projects, tech stack, or achievements.",
         },
     ]);
     const [input, setInput] = useState("");
