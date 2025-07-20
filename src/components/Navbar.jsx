@@ -34,10 +34,8 @@ export default function Navbar() {
   const toggleDarkMode = useDarkMode();
 
   useEffect(() => {
-    // Set dark mode by default on mount
     document.documentElement.classList.add("dark");
     setIsDark(true);
-    // Check localStorage for theme preference
     const theme = localStorage.getItem("theme");
     if (theme === "light") {
       document.documentElement.classList.remove("dark");
@@ -59,15 +57,20 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
-        <div className="font-bold text-xl tracking-tight cursor-pointer" onClick={() => handleScroll("home")}>Buildfolio</div>
+    <nav className="sticky top-0 z-50 w-full bg-white/10 border-b border-white/20 backdrop-blur-xl shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
+        <div
+          className="font-extrabold text-2xl tracking-tight cursor-pointer bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#2c5364] bg-clip-text text-transparent drop-shadow-lg"
+          onClick={() => handleScroll("home")}
+        >
+          Buildfolio
+        </div>
         <div className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleScroll(link.id)}
-              className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="font-bold text-white px-3 py-1 rounded-full transition-all duration-200 hover:bg-gradient-to-r hover:from-[#10b981] hover:to-[#f59e0b] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#10b981]"
             >
               {link.label}
             </button>
@@ -75,19 +78,19 @@ export default function Navbar() {
           <button
             onClick={handleToggle}
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            className="ml-4 p-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#10b981]/20 transition-colors"
           >
             {isDark ? (
               <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.22a1 1 0 011.42 1.42l-.7.7a1 1 0 11-1.42-1.42l.7-.7zM18 9a1 1 0 100 2h-1a1 1 0 100-2h1zm-2.22 6.78a1 1 0 00-1.42 1.42l.7.7a1 1 0 001.42-1.42l-.7-.7zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.22-1.22a1 1 0 00-1.42 1.42l.7.7a1 1 0 001.42-1.42l-.7-.7zM4 11a1 1 0 100-2H3a1 1 0 100 2h1zm2.22-6.78a1 1 0 00-1.42-1.42l-.7.7a1 1 0 101.42 1.42l.7-.7zM10 6a4 4 0 100 8 4 4 0 000-8z" /></svg>
             ) : (
-              <svg className="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
+              <svg className="w-5 h-5 text-gray-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
             )}
           </button>
         </div>
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none"
+            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#10b981]/20 focus:outline-none"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -101,12 +104,12 @@ export default function Navbar() {
         </div>
       </div>
       {menuOpen && (
-        <div className="md:hidden bg-white/95 dark:bg-black/95 border-t border-gray-200 dark:border-gray-800 px-4 py-2 flex flex-col gap-2">
+        <div className="md:hidden bg-white/10 border-t border-white/20 px-4 py-2 flex flex-col gap-2 backdrop-blur-xl">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleScroll(link.id)}
-              className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-2 py-2 rounded text-left focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="font-bold text-white px-3 py-2 rounded-full transition-all duration-200 hover:bg-gradient-to-r hover:from-[#10b981] hover:to-[#f59e0b] hover:text-white text-left focus:outline-none focus:ring-2 focus:ring-[#10b981]"
             >
               {link.label}
             </button>
