@@ -283,28 +283,28 @@ export default function Blog() {
   const recent = posts.filter((p) => p.id !== featured.id).slice(0, 3);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-24 bg-transparent px-4 md:px-12">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 md:py-24 bg-transparent px-4 md:px-12">
       <MeshBackground />
-      <div className="relative z-10 flex flex-col items-center w-full">
-        <h1 className="text-5xl font-extrabold mb-10 text-foreground">Blog</h1>
+      <div className="relative z-10 flex flex-col items-center w-full max-w-7xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 md:mb-10 text-foreground text-center">Blog</h1>
         <AnimatedUnderline />
         {/* Search and filter */}
-        <div className="flex gap-4 mt-4 mb-16">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 mb-8 sm:mb-12 md:mb-16 w-full max-w-4xl">
           <motion.input
             type="text"
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search posts..."
-            className="px-5 py-2 rounded-full border border-white/20 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#10b981] w-48 backdrop-blur-xl"
-            whileFocus={{ width: 220 }}
+            className="px-4 sm:px-5 py-2 rounded-full border border-white/20 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#10b981] w-full sm:w-48 backdrop-blur-xl text-sm sm:text-base"
+            whileFocus={{ width: "100%" }}
             transition={{ duration: 0.3 }}
           />
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
             {CATEGORIES.map((cat) => (
               <motion.button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors border-2 ${category === cat ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] text-white border-transparent" : "border-white/30 bg-white/10 text-white hover:bg-[#10b981]/10"}`}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm transition-colors border-2 ${category === cat ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] text-white border-transparent" : "border-white/30 bg-white/10 text-white hover:bg-[#10b981]/10"}`}
                 whileHover={{ scale: 1.08, backgroundColor: "#10b981" }}
                 transition={{ duration: 0.2 }}
               >
@@ -315,18 +315,18 @@ export default function Blog() {
         </div>
       </div>
       {/* Featured post */}
-      <div className="w-full mt-8">
+      <div className="w-full mt-4 sm:mt-8">
         <FeaturedPost post={featured} onOpen={setModal} />
       </div>
       {/* Recent posts grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 px-2 md:px-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-8 px-2 md:px-8">
         {recent.map((post, idx) => (
           <BlogCard key={post.id} post={post} onOpen={setModal} idx={idx} />
         ))}
       </div>
       {/* View all posts button */}
       <motion.button
-        className="mt-12 px-8 py-3 rounded-full bg-[#10b981] text-white font-semibold shadow-lg hover:bg-[#f59e0b] transition text-lg flex items-center gap-3 group"
+        className="mt-8 sm:mt-12 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-[#10b981] text-white font-semibold shadow-lg hover:bg-[#f59e0b] transition text-base sm:text-lg flex items-center gap-3 group"
         whileHover={{ scale: 1.08 }}
       >
         View All Posts

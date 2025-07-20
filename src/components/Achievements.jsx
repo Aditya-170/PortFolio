@@ -103,7 +103,7 @@ function AnimatedCounter({ to, duration = 1.5 }) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       onViewportEnter={onView}
-      className="text-4xl md:text-5xl font-extrabold text-[#10b981] drop-shadow-lg"
+      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#10b981] drop-shadow-lg"
     >
       {count}
     </motion.span>
@@ -119,27 +119,29 @@ function AchievementCard({ ach, idx, onExpand, expanded }) {
       exit={{ opacity: 0, y: 40 }}
       transition={{ delay: idx * 0.15, duration: 0.7, type: "spring" }}
       whileHover={{ rotate: [0, (Math.random() > 0.5 ? 7 : -7)], scale: 1.06, zIndex: 2, boxShadow: "0 8px 32px 0 #10b98133" }}
-      className={`relative group cursor-pointer flex flex-col justify-between bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-6 min-h-[260px] backdrop-blur-xl overflow-hidden transition-all duration-300 ${expanded ? "z-30" : "z-10"} min-w-[260px] max-w-[320px] h-[320px]`}
+      className={`relative group cursor-pointer flex flex-col justify-between bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-4 sm:p-6 min-h-[200px] sm:min-h-[260px] backdrop-blur-xl overflow-hidden transition-all duration-300 ${expanded ? "z-30" : "z-10"} w-full sm:w-auto sm:min-w-[260px] sm:max-w-[320px] h-auto sm:h-[320px]`}
       onClick={() => onExpand(ach.id)}
     >
       {/* Date badge */}
-      <span className="absolute top-4 right-4 bg-[#10b981]/30 text-xs font-bold px-3 py-1 rounded-full border border-white/40 backdrop-blur-md text-white shadow">
+      <span className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-[#10b981]/30 text-xs font-bold px-2 sm:px-3 py-1 rounded-full border border-white/40 backdrop-blur-md text-white shadow">
         {new Date(ach.date).toLocaleDateString()}
       </span>
       {/* Icon */}
       <motion.div
         whileHover={{ scale: 1.2, y: -8 }}
-        className="mb-4 flex items-center justify-center"
+        className="mb-3 sm:mb-4 flex items-center justify-center"
       >
-        {ach.icon}
+        <div className="text-2xl sm:text-3xl md:text-4xl">
+          {ach.icon}
+        </div>
       </motion.div>
       {/* Counter */}
-      <div className="flex items-end gap-2 mb-2">
+      <div className="flex items-end gap-1 sm:gap-2 mb-2">
         <AnimatedCounter to={ach.metric} />
-        <span className="text-lg font-bold text-[#f59e0b] drop-shadow">{ach.metricLabel}</span>
+        <span className="text-sm sm:text-lg font-bold text-[#f59e0b] drop-shadow">{ach.metricLabel}</span>
       </div>
       {/* Title */}
-      <h3 className="text-xl font-bold text-white mb-2 drop-shadow-lg">
+      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 drop-shadow-lg">
         {ach.title}
       </h3>
       {/* Description */}
@@ -147,18 +149,18 @@ function AchievementCard({ ach, idx, onExpand, expanded }) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-white/90 text-base mb-2"
+        className="text-white/90 text-sm sm:text-base mb-2"
       >
         {ach.description}
       </motion.p>
       {/* Share button */}
       <motion.button
         whileHover={{ scale: 1.2, rotate: 10 }}
-        className="absolute bottom-4 right-4 bg-[#10b981]/30 p-2 rounded-full border border-white/40 text-white shadow hover:bg-[#f59e0b]/50 transition"
+        className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 bg-[#10b981]/30 p-1.5 sm:p-2 rounded-full border border-white/40 text-white shadow hover:bg-[#f59e0b]/50 transition"
         onClick={e => { e.stopPropagation(); navigator.share && navigator.share({ title: ach.title, text: ach.description }); }}
         aria-label="Share achievement"
       >
-        <FaShareAlt />
+        <FaShareAlt className="text-sm sm:text-base" />
       </motion.button>
       {/* Expand overlay */}
       <AnimatePresence>
@@ -167,11 +169,11 @@ function AchievementCard({ ach, idx, onExpand, expanded }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-8 rounded-2xl z-40"
+            className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-4 sm:p-8 rounded-2xl z-40"
           >
-            <h4 className="text-2xl font-bold text-white mb-4">{ach.title}</h4>
-            <p className="text-white/90 text-lg mb-4 text-center">{ach.description}</p>
-            <button className="mt-2 px-6 py-2 rounded-full bg-gradient-to-r from-[#10b981] to-[#f59e0b] text-white font-semibold shadow hover:scale-105 transition" onClick={e => { e.stopPropagation(); onExpand(null); }}>Close</button>
+            <h4 className="text-lg sm:text-2xl font-bold text-white mb-3 sm:mb-4 text-center">{ach.title}</h4>
+            <p className="text-white/90 text-sm sm:text-lg mb-3 sm:mb-4 text-center">{ach.description}</p>
+            <button className="mt-2 px-4 sm:px-6 py-2 rounded-full bg-gradient-to-r from-[#10b981] to-[#f59e0b] text-white font-semibold shadow hover:scale-105 transition text-sm sm:text-base" onClick={e => { e.stopPropagation(); onExpand(null); }}>Close</button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -192,23 +194,23 @@ export default function Achievements() {
   const secondRow = filtered.slice(3, 5);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-24 bg-transparent px-4 md:px-12">
-      <div className="relative z-10 flex flex-col items-center w-full">
-        <h1 className="text-5xl font-extrabold mb-10 text-foreground">Achievements</h1>
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 md:py-24 bg-transparent px-4 md:px-12">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-7xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 md:mb-10 text-foreground text-center">Achievements</h1>
         {/* Filters and timeline toggle */}
-        <div className="flex flex-wrap gap-4 mb-8 items-center">
+        <div className="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8 items-center justify-center">
           {FILTERS.map(f => (
             <button
               key={f.value}
               onClick={() => setFilter(f.value)}
-              className={`px-5 py-2 rounded-full font-semibold border-2 transition text-white/90 ${filter === f.value ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] border-transparent" : "border-white/30 bg-white/10 hover:bg-[#10b981]/10"}`}
+              className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-semibold border-2 transition text-white/90 text-sm sm:text-base ${filter === f.value ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] border-transparent" : "border-white/30 bg-white/10 hover:bg-[#10b981]/10"}`}
             >
               {f.label}
             </button>
           ))}
           <button
             onClick={() => setTimeline(v => !v)}
-            className="ml-4 px-5 py-2 rounded-full font-semibold border-2 border-white/30 text-white/90 bg-white/10 hover:bg-[#10b981]/10 transition"
+            className="ml-2 sm:ml-4 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-semibold border-2 border-white/30 text-white/90 bg-white/10 hover:bg-[#10b981]/10 transition text-sm sm:text-base"
           >
             {timeline ? "Grid View" : "Timeline View"}
           </button>
@@ -217,14 +219,14 @@ export default function Achievements() {
         <div className="w-full">
           <AnimatePresence mode="popLayout">
             {!timeline ? (
-              <div className="flex flex-col gap-8">
-                <div className="flex flex-row gap-8 justify-center px-2 md:px-8">
+              <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
                   {firstRow.map((ach, idx) => (
                     <AchievementCard key={ach.id} ach={ach} idx={idx} onExpand={setExpanded} expanded={expanded === ach.id} />
                   ))}
                 </div>
                 {secondRow.length > 0 && (
-                  <div className="flex flex-row gap-8 justify-center px-2 md:px-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 justify-items-center">
                     {secondRow.map((ach, idx) => (
                       <AchievementCard key={ach.id} ach={ach} idx={idx + 3} onExpand={setExpanded} expanded={expanded === ach.id} />
                     ))}
@@ -232,7 +234,7 @@ export default function Achievements() {
                 )}
               </div>
             ) : (
-              <div className="flex flex-col gap-8 timeline-view">
+              <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 timeline-view">
                 {filtered.map((ach, idx) => (
                   <AchievementCard key={ach.id} ach={ach} idx={idx} onExpand={setExpanded} expanded={expanded === ach.id} />
                 ))}

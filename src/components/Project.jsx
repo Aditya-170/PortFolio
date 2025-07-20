@@ -243,18 +243,18 @@ export default function Project() {
       );
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-24 bg-transparent px-4 md:px-12">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 md:py-24 bg-transparent px-4 md:px-12">
       <MeshBackground />
-      <div className="relative z-10 flex flex-col items-center w-full">
-        <h1 className="text-5xl font-extrabold mb-10 text-foreground glitch-title">Projects</h1>
+      <div className="relative z-10 flex flex-col items-center w-full max-w-7xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 md:mb-10 text-foreground glitch-title text-center">Projects</h1>
         {/* Filter buttons */}
-        <div className="flex gap-4 mt-4 mb-16 relative">
-          <div className="absolute bottom-0 left-0 h-1 bg-[#10b981] rounded-full transition-all duration-300" style={{ width: 80, transform: `translateX(${FILTERS.findIndex(f => f.value === filter) * 90}px)` }} />
+        <div className="flex flex-wrap gap-2 sm:gap-4 mt-4 mb-8 sm:mb-12 md:mb-16 relative justify-center">
+          <div className="absolute bottom-0 left-0 h-1 bg-[#10b981] rounded-full transition-all duration-300" style={{ width: 60, transform: `translateX(${FILTERS.findIndex(f => f.value === filter) * 70}px)` }} />
           {FILTERS.map(f => (
             <button
               key={f.value}
               onClick={() => setFilter(f.value)}
-              className={`px-6 py-2 rounded-full font-semibold border-2 transition text-white/90 ${filter === f.value ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] border-transparent" : "border-white/30 bg-white/10 hover:bg-[#10b981]/10"}`}
+              className={`px-3 sm:px-6 py-1.5 sm:py-2 rounded-full font-semibold border-2 transition text-white/90 text-sm sm:text-base ${filter === f.value ? "bg-gradient-to-r from-[#10b981] to-[#f59e0b] border-transparent" : "border-white/30 bg-white/10 hover:bg-[#10b981]/10"}`}
             >
               {f.label}
             </button>
@@ -262,7 +262,7 @@ export default function Project() {
         </div>
       </div>
       {/* Projects grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2 md:px-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-2 md:px-8">
         {loading
           ? Array.from({ length: 3 }).map((_, i) => (
               <div key={i} className="h-80 rounded-2xl animate-pulse" style={{ background: "rgba(0,0,0,0.10)" }} />
