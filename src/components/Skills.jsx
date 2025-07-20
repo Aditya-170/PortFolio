@@ -115,27 +115,11 @@ function CircularProgress({ percent, color, size = 80, stroke = 8, children }) {
 }
 
 function SkillPopover({ skill, open }) {
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white/20 backdrop-blur-xl border border-white/30 rounded-xl shadow-lg px-6 py-3 z-30 text-sm text-white"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-        >
-          <div className="font-bold mb-1 text-[#10b981]">{skill.name}</div>
-          <div>Level: {skill.level}</div>
-          <div>Years: {skill.years}</div>
-          <div>Projects: {skill.projects}</div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+  // Removed SkillPopover and AnimatePresence logic
+  return null;
 }
 
 function SkillCategory({ category, open, onToggle }) {
-  const [popover, setPopover] = useState(null);
   return (
     <motion.div
       className="mb-8 bg-white/10 border border-white/20 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
@@ -152,44 +136,39 @@ function SkillCategory({ category, open, onToggle }) {
           ▶
         </motion.span>
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8 pb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ staggerChildren: 0.1 }}
-          >
-            {category.skills.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                className="relative flex flex-col items-center group cursor-pointer bg-white/10 border border-white/20 rounded-2xl shadow-lg p-6 mb-2 backdrop-blur-xl"
-                onMouseEnter={() => setPopover(i)}
-                onMouseLeave={() => setPopover(null)}
-                whileHover={{ scale: 1.08, boxShadow: "0 8px 32px 0 #10b98133" }}
-                transition={{ duration: 0.2 }}
-              >
-                <CircularProgress percent={skill.percent} color="#10b981" size={90}>
-                  <text
-                    x="50%"
-                    y="54%"
-                    textAnchor="middle"
-                    fontSize="1.2em"
-                    fill="#10b981"
-                    fontWeight="bold"
-                  >
-                    {skill.percent}%
-                  </text>
-                </CircularProgress>
-                <div className="mt-3 text-lg font-semibold text-white">{skill.name}</div>
-                <div className="text-xs text-[#f59e0b] mb-1">{skill.level}</div>
-                <SkillPopover skill={skill} open={popover === i} />
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8 pb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          {category.skills.map((skill, i) => (
+            <motion.div
+              key={skill.name}
+              className="relative flex flex-col items-center group cursor-pointer bg-white/10 border border-white/20 rounded-2xl shadow-lg p-6 mb-2 backdrop-blur-xl"
+              whileHover={{ scale: 1.08, boxShadow: "0 8px 32px 0 #10b98133" }}
+              transition={{ duration: 0.2 }}
+            >
+              <CircularProgress percent={skill.percent} color="#10b981" size={90}>
+                <text
+                  x="50%"
+                  y="54%"
+                  textAnchor="middle"
+                  fontSize="1.2em"
+                  fill="#10b981"
+                  fontWeight="bold"
+                >
+                  {skill.percent}%
+                </text>
+              </CircularProgress>
+              <div className="mt-3 text-lg font-semibold text-white">{skill.name}</div>
+              <div className="text-xs text-[#f59e0b] mb-1">{skill.level}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
     </motion.div>
   );
 }

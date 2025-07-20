@@ -6,19 +6,19 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, F
 const CONTACT_INFO = [
   {
     label: "Email",
-    value: "aditya@example.com",
+    value: "2023ugcs030@nitjsr.ac.in",
     icon: <FaEnvelope className="text-[#10b981]" size={22} />,
     type: "email",
   },
   {
     label: "Phone",
-    value: "+1 234 567 8901",
+    value: "+91 9304000000",
     icon: <FaPhone className="text-[#f59e0b]" size={22} />,
     type: "phone",
   },
   {
     label: "Location",
-    value: "New Delhi, India",
+    value: "Jamshedpur, Jharkhand",
     icon: <FaMapMarkerAlt className="text-blue-400" size={22} />,
     type: "location",
   },

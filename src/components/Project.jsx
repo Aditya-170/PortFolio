@@ -6,89 +6,75 @@ import { FaGithub, FaExternalLinkAlt, FaCodeBranch, FaStar } from "react-icons/f
 const PROJECTS = [
   {
     id: 1,
-    title: "Next.js Portfolio",
-    description: "A modern portfolio site built with Next.js, Tailwind CSS, and Framer Motion.",
-    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&w=600&h=400&fit=crop",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    title: "Raksha",
+    description: "A full-stack smart healthcare platform with role-based access for Patients, Doctors, and Pathlabs.",
+    image: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&w=600&h=400&fit=crop",
+    tech: ["Next.js", "Tailwind CSS", "Shadcn/UI", "MongoDB", "Socket.IO", "ML Model", "Gemini AI"],
     featured: true,
-    github: "https://github.com/adityatiwari/nextjs-portfolio",
-    demo: "https://nextjs-portfolio-demo.com",
-    date: "2024-04-01",
-    duration: "3 weeks",
-    stars: 120,
-    forks: 18,
+    github: "https://github.com/ujjwalsingh/raksha",
+    demo: "https://raksha-healthcare.vercel.app",
+    date: "2025-06-01",
+    duration: "3 months",
+    stars: 95,
+    forks: 23,
     gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
-    caseStudy: "A deep dive into building a performant, animated portfolio with modern web tech.",
+    caseStudy: "A comprehensive healthcare platform featuring real-time doctor-patient communication, ML-based disease prediction, and AI-powered chatbot for instant medical query resolution.",
   },
   {
     id: 2,
-    title: "Mobile Task Manager",
-    description: "A cross-platform mobile app for task management, built with React Native.",
-    image: "https://images.pexels.com/photos/4145196/pexels-photo-4145196.jpeg?auto=compress&w=600&h=400&fit=crop",
-    tech: ["React Native", "Expo", "Redux"],
+    title: "DesiDriveX",
+    description: "A car rental web platform with booking, filtering, and payment features.",
+    image: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&w=600&h=400&fit=crop",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript", "Tailwind CSS"],
     featured: false,
-    github: "https://github.com/adityatiwari/mobile-task-manager",
-    demo: "https://expo.dev/@adityatiwari/task-manager",
-    date: "2023-12-15",
-    duration: "1 month",
-    stars: 80,
-    forks: 10,
+    github: "https://github.com/ujjwalsingh/desidrivex",
+    demo: "https://desidrivex.vercel.app",
+    date: "2025-02-15",
+    duration: "2 months",
+    stars: 67,
+    forks: 15,
     gif: "https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif",
-    caseStudy: "How I designed and shipped a productivity app for iOS and Android.",
+    caseStudy: "A complete car rental solution with user authentication, admin panel for vehicle management, and integrated email notifications.",
   },
   {
     id: 3,
-    title: "Desktop Markdown Editor",
-    description: "A beautiful markdown editor for desktop, built with Electron.",
-    image: "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&w=600&h=400&fit=crop",
-    tech: ["Electron", "React", "Node.js"],
+    title: "Re-Wear",
+    description: "A sustainable fashion platform enabling users to list, swap, and resell pre-owned clothes.",
+    image: "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&w=600&h=400&fit=crop",
+    tech: ["Next.js", "Tailwind CSS", "Shadcn/UI", "MongoDB", "Socket.IO"],
     featured: false,
-    github: "https://github.com/adityatiwari/markdown-editor",
-    demo: "https://github.com/adityatiwari/markdown-editor/releases",
-    date: "2023-09-10",
-    duration: "2 months",
-    stars: 60,
-    forks: 7,
+    github: "https://github.com/ujjwalsingh/re-wear",
+    demo: "https://re-wear.vercel.app",
+    date: "2025-07-01",
+    duration: "2.5 months",
+    stars: 78,
+    forks: 19,
     gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
-    caseStudy: "Lessons learned building a cross-platform desktop app.",
-  },
-  {
-    id: 4,
-    title: "Web Animation Playground",
-    description: "A playground for experimenting with web animations and SVGs.",
-    image: "https://images.pexels.com/photos/4145197/pexels-photo-4145197.jpeg?auto=compress&w=600&h=400&fit=crop",
-    tech: ["React", "SVG", "GSAP"],
-    featured: false,
-    github: "https://github.com/adityatiwari/web-animation-playground",
-    demo: "https://web-animation-playground.com",
-    date: "2023-06-20",
-    duration: "2 weeks",
-    stars: 45,
-    forks: 5,
-    gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
-    caseStudy: "Creative coding with SVG and animation libraries.",
+    caseStudy: "An eco-friendly fashion marketplace with real-time notifications, smart search functionality, and sustainability metrics tracking.",
   },
 ];
 
 const FILTERS = [
   { label: "All", value: "all" },
-  { label: "Web", value: "web" },
-  { label: "Mobile", value: "mobile" },
-  { label: "Desktop", value: "desktop" },
+  { label: "Healthcare", value: "healthcare" },
+  { label: "E-commerce", value: "ecommerce" },
+  { label: "Sustainability", value: "sustainability" },
 ];
 
 const TECH_COLORS = {
-  "Next.js": "bg-black text-white",
-  "Tailwind CSS": "bg-cyan-400 text-black",
-  "Framer Motion": "bg-pink-500 text-white",
-  "React Native": "bg-blue-500 text-white",
-  "Expo": "bg-gray-800 text-white",
-  "Redux": "bg-purple-600 text-white",
-  "Electron": "bg-gray-700 text-white",
-  "React": "bg-blue-400 text-white",
-  "Node.js": "bg-green-600 text-white",
-  "SVG": "bg-yellow-400 text-black",
-  "GSAP": "bg-green-400 text-black",
+  "Next.js": "bg-gradient-to-r from-black to-gray-800 text-white",
+  "Tailwind CSS": "bg-gradient-to-r from-cyan-400 to-cyan-500 text-black",
+  "Shadcn/UI": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
+  "MongoDB": "bg-gradient-to-r from-green-500 to-green-600 text-white",
+  "Socket.IO": "bg-gradient-to-r from-orange-500 to-orange-600 text-white",
+  "ML Model": "bg-gradient-to-r from-pink-500 to-pink-600 text-white",
+  "Gemini AI": "bg-gradient-to-r from-blue-600 to-blue-700 text-white",
+  "React": "bg-gradient-to-r from-blue-400 to-blue-500 text-white",
+  "Node.js": "bg-gradient-to-r from-green-600 to-green-700 text-white",
+  "Express.js": "bg-gradient-to-r from-gray-600 to-gray-700 text-white",
+  "HTML": "bg-gradient-to-r from-orange-400 to-orange-500 text-black",
+  "CSS": "bg-gradient-to-r from-blue-500 to-blue-600 text-white",
+  "JavaScript": "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black",
 };
 
 function MeshBackground() {
@@ -129,10 +115,11 @@ function GlitchTitle({ children }) {
 function TechBadge({ tech, idx, hovered }) {
   return (
     <motion.span
-      className={`inline-block px-3 py-1 rounded-full text-xs font-bold mr-2 mb-2 transition-all duration-300 ${TECH_COLORS[tech] || "bg-gray-300 text-black"}`}
-      initial={{ opacity: 0, y: 10 }}
-      animate={hovered ? { opacity: 1, y: 0, scale: 1.1 } : { opacity: 1, y: 0, scale: 1 }}
-      transition={{ delay: hovered ? 0.2 + idx * 0.08 : 0, duration: 0.4 }}
+      className={`inline-block px-3 py-1.5 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm border border-white/20 transition-all duration-300 ${TECH_COLORS[tech] || "bg-gradient-to-r from-gray-300 to-gray-400 text-black"}`}
+      initial={{ opacity: 0, y: 10, scale: 0.8 }}
+      animate={hovered ? { opacity: 1, y: 0, scale: 1.05 } : { opacity: 1, y: 0, scale: 1 }}
+      transition={{ delay: hovered ? 0.1 + idx * 0.05 : 0, duration: 0.3 }}
+      whileHover={{ scale: 1.1, y: -2 }}
     >
       {tech}
     </motion.span>
@@ -140,7 +127,6 @@ function TechBadge({ tech, idx, hovered }) {
 }
 
 function ProjectCard({ project, idx, onOpen, hoveredId, setHoveredId }) {
-  const isFeatured = project.featured;
   const hovered = hoveredId === project.id;
   return (
     <motion.div
@@ -149,8 +135,8 @@ function ProjectCard({ project, idx, onOpen, hoveredId, setHoveredId }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: idx * 0.12, duration: 0.7, type: "spring" }}
       whileHover={{ rotateY: 8, rotateX: -4, scale: 1.04, zIndex: 2, boxShadow: "0 8px 32px 0 #10b98133" }}
-      className={`relative group cursor-pointer flex flex-col justify-between rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${isFeatured ? "col-span-2 row-span-2" : ""}`}
-      style={{ minHeight: isFeatured ? 420 : 320, background: "rgba(0,0,0,0.15)" }}
+      className="relative group cursor-pointer flex flex-col justify-between rounded-2xl shadow-2xl overflow-hidden transition-all duration-300"
+      style={{ minHeight: 320, background: "rgba(0,0,0,0.15)" }}
       onMouseEnter={() => setHoveredId(project.id)}
       onMouseLeave={() => setHoveredId(null)}
       onClick={() => onOpen(project)}
@@ -161,18 +147,8 @@ function ProjectCard({ project, idx, onOpen, hoveredId, setHoveredId }) {
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        {project.gif && hovered && (
-          <motion.img
-            src={project.gif}
-            alt="Demo gif"
-            className="absolute inset-0 w-full h-full object-cover z-10 opacity-90 pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-        )}
         <div className="absolute top-4 left-4 flex gap-2 z-10">
-          {project.tech.map((tech, i) => (
+          {project.tech.slice(0, 3).map((tech, i) => (
             <TechBadge key={tech} tech={tech} idx={i} hovered={hovered} />
           ))}
         </div>
@@ -261,12 +237,10 @@ export default function Project() {
   const filtered = filter === "all"
     ? PROJECTS
     : PROJECTS.filter(p =>
-        (filter === "web" && p.tech.includes("Next.js")) ||
-        (filter === "mobile" && p.tech.includes("React Native")) ||
-        (filter === "desktop" && p.tech.includes("Electron"))
+        (filter === "healthcare" && p.title === "Raksha") ||
+        (filter === "ecommerce" && p.title === "DesiDriveX") ||
+        (filter === "sustainability" && p.title === "Re-Wear")
       );
-  const featured = filtered.find(p => p.featured) || filtered[0];
-  const others = filtered.filter(p => p.id !== featured.id);
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-24 bg-transparent px-4 md:px-12">
@@ -274,7 +248,7 @@ export default function Project() {
       <div className="relative z-10 flex flex-col items-center w-full">
         <h1 className="text-5xl font-extrabold mb-10 text-foreground glitch-title">Projects</h1>
         {/* Filter buttons */}
-        <div className="flex gap-4 mt-4 relative">
+        <div className="flex gap-4 mt-4 mb-16 relative">
           <div className="absolute bottom-0 left-0 h-1 bg-[#10b981] rounded-full transition-all duration-300" style={{ width: 80, transform: `translateX(${FILTERS.findIndex(f => f.value === filter) * 90}px)` }} />
           {FILTERS.map(f => (
             <button
@@ -287,22 +261,14 @@ export default function Project() {
           ))}
         </div>
       </div>
-      {/* Featured project spotlight */}
-      <div className="w-full mb-12">
-        {loading ? (
-          <div className="w-full h-96 rounded-3xl animate-pulse" style={{ background: "rgba(0,0,0,0.10)" }} />
-        ) : (
-          <ProjectCard project={featured} idx={0} onOpen={setModal} hoveredId={hoveredId} setHoveredId={setHoveredId} />
-        )}
-      </div>
-      {/* Project grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-2 md:px-8">
+      {/* Projects grid */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2 md:px-8">
         {loading
           ? Array.from({ length: 3 }).map((_, i) => (
               <div key={i} className="h-80 rounded-2xl animate-pulse" style={{ background: "rgba(0,0,0,0.10)" }} />
             ))
-          : others.map((project, idx) => (
-              <ProjectCard key={project.id} project={project} idx={idx + 1} onOpen={setModal} hoveredId={hoveredId} setHoveredId={setHoveredId} />
+          : filtered.map((project, idx) => (
+              <ProjectCard key={project.id} project={project} idx={idx} onOpen={setModal} hoveredId={hoveredId} setHoveredId={setHoveredId} />
             ))}
       </div>
       {/* Modal */}
