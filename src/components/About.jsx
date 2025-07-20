@@ -128,7 +128,7 @@ export default function About() {
           <button
             className="relative px-8 py-3 rounded-full bg-primary text-white font-bold shadow-lg hover:bg-secondary transition text-lg mt-6 overflow-hidden"
           >
-            <a href="/resume-placeholder.pdf" download>
+            <a href="/resume_portfolio.pdf" download>
               Download Resume
             </a>
           </button>
@@ -146,7 +146,7 @@ export default function About() {
             onMouseLeave={handlePhotoLeave}
           >
             <Image
-              src="/globe.svg"
+              src="/image_portfolio.jpg"
               alt="Personal Photo"
               fill
               className="object-cover group-hover:scale-105 group-hover:blur-[1px] transition duration-500"

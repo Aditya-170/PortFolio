@@ -6,13 +6,13 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, F
 const CONTACT_INFO = [
   {
     label: "Email",
-    value: "2023ugcs030@nitjsr.ac.in",
+    value: "ujjwalchauhan654@gmail.com",
     icon: <FaEnvelope className="text-[#10b981]" size={22} />,
     type: "email",
   },
   {
     label: "Phone",
-    value: "+91 9304000000",
+    value: "+91 9341658004",
     icon: <FaPhone className="text-[#f59e0b]" size={22} />,
     type: "phone",
   },
@@ -27,13 +27,13 @@ const CONTACT_INFO = [
 const SOCIALS = [
   {
     label: "LinkedIn",
-    url: "https://linkedin.com/in/adityatiwari",
+    url: "https://linkedin.com/in/ujjwal",
     icon: <FaLinkedin size={22} />,
     color: "#0e76a8",
   },
   {
     label: "GitHub",
-    url: "https://github.com/adityatiwari",
+    url: "https://github.com/Ujjwal-singh32",
     icon: <FaGithub size={22} />,
     color: "#333",
   },
@@ -234,17 +234,36 @@ export default function Contact() {
   const handleSubmit = async e => {
     e.preventDefault();
     setTouched({ name: true, email: true, subject: true, message: true });
+
     const errs = validate(form);
     setErrors(errs);
     if (Object.keys(errs).length) return;
+
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setSuccess(true);
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTouched({});
+      } else {
+        console.error("Email send failed.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    } finally {
       setLoading(false);
-      setSuccess(true);
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setTouched({});
-    }, 1500);
+    }
   };
+
   const handleCopy = (val) => {
     navigator.clipboard.writeText(val);
     setCopied(c => ({ ...c, [val]: true }));
