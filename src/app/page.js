@@ -115,10 +115,10 @@ export default function Home() {
           transition={{ duration: 0.7 }}
         >
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-center bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent drop-shadow-lg">
-            Hi, I'm Aditya Tiwari(HOD)
+            Hi, I'm Ujjwal Kumar Singh
           </h1>
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-foreground text-center">
-            Creative Full Stack Developer
+            Creative Full Stack Developer and AI Enthusiast
           </h2>
           <div className="text-xl sm:text-2xl font-mono text-primary mb-8 h-10 text-center">
             <Typewriter

@@ -36,7 +36,7 @@ const PERSONALITY_BADGES = [
   { label: "Problem Solver", color: "bg-purple-500 text-white" },
 ];
 
-const YEARS_EXPERIENCE = 4;
+const YEARS_EXPERIENCE = 2;
 
 function AnimatedCounter({ to, duration = 2 }) {
   const [count, setCount] = useState(0);
@@ -111,7 +111,7 @@ export default function About() {
       >
         <div className="flex-1 flex flex-col items-start justify-center px-6 md:px-16 mb-12 md:mb-0">
           <h1 className="text-5xl font-extrabold text-foreground mb-4">About Me</h1>
-          <p className="text-lg text-muted-foreground mb-6 max-w-xl">Passionate about crafting beautiful, performant web apps. Always learning, always creating.</p>
+          <p className="text-lg text-muted-foreground mb-6 max-w-xl"> I'm a 3rd-year Computer Science undergraduate at NIT Jamshedpur with a strong foundation in full-stack development, machine learning, and computer science fundamentals. I build intelligent, scalable web platforms and enjoy solving real-world problems through tech. Passionate about clean code, continuous learning, and meaningful impact.</p>
           <div className="flex items-center gap-8 mb-8">
             <div className="flex flex-col items-center">
               <span className="text-5xl font-bold text-primary">
