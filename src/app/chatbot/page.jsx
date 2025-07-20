@@ -77,7 +77,7 @@ export default function GeminiChatBot() {
                 }}
                 className="backdrop-blur-lg bg-white/70 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-700 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)] rounded-3xl p-6 max-w-xl mt-10 mb-10 mx-auto w-full"
             >
-                <CursorTrail />
+             
                 <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
                     💬 Ask Ujjwal's AI Assistant
                 </h2>
